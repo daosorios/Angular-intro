@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col">
+        <h1>*ngIf</h1>
+        <hr>
+
+       <!--ngif interaccion para que sea mostrada y al hacer el click ve si es igual a falso o true-->
+        <div *ngIf='mostrar' class="card" style="width:100%;">
+            <img src="../../../assets/imagen/cafe-espresso-taza.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2>{{frase.autor}}</h2>
+              <p class="card-text">{{frase.mensaje}}</p>
+            </div>
+        </div>
+
+        <div (click)='mostrar = !mostrar' class="d-grid" >
+            <button type="button" class="btn btn-outline-secondary mt-3">Mostrar/Ocultar</button>
+        </div>
+        
+
+    </div>
+
+    <div class="col">
+        <h1>*ngFor</h1>
+        <hr>
+        <ul class="list-group">
+            <!-- recorre el arreglo y queda guardado en el let por cada iteracion, y el numero -->
+            <li *ngFor='let persona of personajes; let i= index'  class="list-group-item " aria-current="true">{{i + 1}}- {{persona}}</li>
+           
+          </ul>
+    </div>
+
+</div>
